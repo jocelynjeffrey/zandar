@@ -36,14 +36,27 @@ body {
 
 h1 {
   margin: 0;
-  padding: 1.5rem 0 2.5rem;
+  padding: 1rem 0 2.5rem;
   font-family: 'Berkshire Swash', cursive;
   text-shadow: -1px 0 #AD3237, 0 1px #AD3237, 1px 0 #AD3237, 0 -1px #AD3237;
   font-size: 8rem;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
+}
+
+button {
+  background: navy;
+  border: none;
+  font-size: 1rem;
+  min-width: 8rem;
+  padding: 1rem;
+  color: yellow;
+
+  &:hover {
+    background: #103f6b;
+  }
 }
 
 </style>

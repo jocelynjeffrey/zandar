@@ -3,6 +3,7 @@
     <h1>{{ main }}</h1>
     <img src="../assets/imgs/crystal_ball.png">
     <h2>{{ fortune }}</h2>
+    <button>click me</button>
   </div>
 </template>
 
