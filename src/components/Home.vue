@@ -4,9 +4,9 @@
     <div class="crystal-ball">
       <img src="../assets/imgs/crystal_ball.png">
       <transition name="fade">
-        <h2 class="fortune-text" v-if="showFortune">{{ fortune }}</h2>
+        <h2 class="fortune-text" v-if="showFortune">{{ getFortune() }}</h2>
       </transition>
-      <button v-if="!showFortune" @click="getFortune">click me</button>
+      <button v-if="!showFortune" @click="motionDetected">click me</button>
     </div>
     <h2>{{ question }}</h2>
   </div>
@@ -23,8 +23,8 @@ export default {
       showFortune: false,
     };
   },
-  computed: {
-    fortune() {
+  methods: {
+    getFortune() {
       switch (true) {
         case this.fortuneVariable <= 15:
           return 'yes!';
@@ -42,20 +42,17 @@ export default {
           return 'hmmm...maybe?';
       }
     },
-  },
-  methods: {
-    getFortune() {
+    motionDetected() {
       // axios.get('http://localhost:3000/api/v1/temperature')
       //   .then(() => {
-      //     this.setFortune();
+      //     this.setFortuneValue();
       //     this.reset();
       //   })
       //   .catch(error => console.log('error from server', error)); // eslint-disable-line
-      this.setFortune();
+      this.setFortuneValue();
     },
-    setFortune() {
-      this.fortuneVariable = (Math.random() * 100).toFixed(2) - 0;
-      console.log(this.fortuneVariable); // eslint-disable-line
+    setFortuneValue() {
+      this.fortuneVariable = (Math.random() * 100).toFixed(2);
       this.showFortune = true;
       this.reset(); // remove when api is called
     },
@@ -63,7 +60,6 @@ export default {
       setTimeout(
         function() { // eslint-disable-line
           this.showFortune = false;
-          console.log('fortune is:', this.fortune); // eslint-disable-line
         }.bind(this),
         1400,
       );
