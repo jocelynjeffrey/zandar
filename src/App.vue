@@ -17,33 +17,35 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
-body {
+
+html, body, .viewport {
+  width: 100%;
+  height: 100%;
   margin: 0;
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: no-repeat center url("./assets/imgs/sky.png");
   background-size: cover;
-  padding: 40px;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   color:rgb(245, 210, 15);
+  font-size: 16px;
+  text-align: center;
 }
 
 h1 {
   margin: 0;
-  padding: 1rem 0 2.5rem;
   font-family: 'Berkshire Swash', cursive;
   text-shadow: -1px 0 #AD3237, 0 1px #AD3237, 1px 0 #AD3237, 0 -1px #AD3237;
   font-size: 8rem;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  font-style: italic;
 }
 
 button {
@@ -58,5 +60,4 @@ button {
     background: #103f6b;
   }
 }
-
 </style>
